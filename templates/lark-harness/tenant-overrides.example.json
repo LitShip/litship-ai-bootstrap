@@ -1,0 +1,25 @@
+{
+  "company_name": "Lit Ship",
+  "terms": {
+    "client": "お客様",
+    "project": "案件",
+    "owner": "担当者"
+  },
+  "rules": {
+    "monthly_close_day": "20",
+    "requires_review_when": [
+      "個人情報を含む",
+      "外部送信がある",
+      "金額・契約・請求に関係する"
+    ],
+    "never_touch": [
+      "本番Lark Base",
+      "本番DB",
+      "APIキー",
+      "パスワード"
+    ]
+  },
+  "contacts": {
+    "when_stuck": "三宅に連絡"
+  }
+}
