@@ -63,7 +63,7 @@
 /* TOC */
 #litship-meguro-seminar .toc{padding:22px 24px;margin-bottom:40px}
 #litship-meguro-seminar .toc-title{margin:0 0 12px;color:var(--navy);font-size:17px}
-#litship-meguro-seminar .toc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+#litship-meguro-seminar .toc-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:8px}
 #litship-meguro-seminar .toc-grid a{display:flex;gap:10px;align-items:center;padding:10px 12px;background:#f6f7fb;border-radius:10px;color:var(--ink);font-size:13px;font-weight:700}
 #litship-meguro-seminar .toc-grid a:hover{background:var(--sky)}
 #litship-meguro-seminar .toc-num{width:26px;height:26px;border-radius:50%;display:grid;place-items:center;background:var(--indigo);color:#fff;font-size:11px;flex:none}
@@ -214,6 +214,52 @@
   #litship-meguro-seminar .map-link{transform:rotate(90deg);height:24px}
   #litship-meguro-seminar .ls-philo{grid-template-columns:1fr;text-align:center;justify-items:center}
 }
+
+/* Speaker */
+#litship-meguro-seminar .speaker{padding:0;overflow:hidden;margin-bottom:28px}
+#litship-meguro-seminar .speaker-top{display:grid;grid-template-columns:auto 1fr;gap:22px;align-items:center;padding:28px 30px;background:linear-gradient(135deg,#fff 0%,var(--sky) 100%);border-bottom:1px solid var(--line)}
+#litship-meguro-seminar .speaker-badge{width:96px;height:96px;border-radius:50%;background:var(--navy);color:var(--sun);display:grid;place-items:center;text-align:center;font-weight:900;font-size:12px;line-height:1.35;letter-spacing:.06em;box-shadow:0 0 0 6px rgba(53,70,168,.12)}
+#litship-meguro-seminar .speaker-badge b{display:block;font-size:30px;color:#fff;letter-spacing:0}
+#litship-meguro-seminar .speaker-eye{display:inline-block;background:var(--red);color:#fff;font-size:11px;font-weight:800;padding:4px 10px;border-radius:6px;letter-spacing:.06em}
+#litship-meguro-seminar .speaker-name{margin:8px 0 2px;font-size:clamp(26px,3.6vw,34px);color:var(--navy);line-height:1.3}
+#litship-meguro-seminar .speaker-name small{font-size:16px;font-weight:700;margin-left:4px}
+#litship-meguro-seminar .speaker-role{font-size:13px;color:var(--muted);line-height:1.7}
+#litship-meguro-seminar .speaker-body{display:grid;grid-template-columns:1.1fr 1fr;gap:0}
+#litship-meguro-seminar .speaker-col{padding:24px 30px;min-width:0}
+#litship-meguro-seminar .speaker-col+.speaker-col{border-left:1px solid var(--line)}
+#litship-meguro-seminar .speaker-col h3{margin:0 0 12px;font-size:12px;font-weight:800;letter-spacing:.12em;color:var(--indigo)}
+#litship-meguro-seminar .timeline{margin:0;padding:0;list-style:none;display:grid;gap:0}
+#litship-meguro-seminar .timeline li{position:relative;padding:0 0 14px 22px;font-size:13px;color:var(--ink);line-height:1.7}
+#litship-meguro-seminar .timeline li:before{content:"";position:absolute;left:0;top:7px;width:10px;height:10px;border-radius:50%;background:var(--indigo)}
+#litship-meguro-seminar .timeline li:after{content:"";position:absolute;left:4px;top:19px;bottom:0;width:2px;background:var(--line)}
+#litship-meguro-seminar .timeline li:last-child{padding-bottom:0}
+#litship-meguro-seminar .timeline li:last-child:after{display:none}
+#litship-meguro-seminar .timeline b{display:block;color:var(--navy)}
+#litship-meguro-seminar .books{display:grid;gap:8px}
+#litship-meguro-seminar .book{display:grid;grid-template-columns:8px 1fr;gap:12px;padding:10px 12px;background:#f6f7fb;border-radius:10px}
+#litship-meguro-seminar .book:before{content:"";border-radius:3px;background:var(--navy)}
+#litship-meguro-seminar .book.hl{background:var(--sun2)}
+#litship-meguro-seminar .book.hl:before{background:var(--sun)}
+#litship-meguro-seminar .book strong{display:block;font-size:13px;color:var(--navy);line-height:1.5}
+#litship-meguro-seminar .book span{display:block;font-size:11px;color:var(--muted)}
+#litship-meguro-seminar .media{display:flex;flex-wrap:wrap;gap:6px;margin-top:14px}
+#litship-meguro-seminar .media a{padding:5px 10px;border:1px solid var(--line);border-radius:999px;font-size:12px;font-weight:700;color:var(--navy);background:#fff}
+#litship-meguro-seminar .media a:hover{border-color:var(--indigo)}
+#litship-meguro-seminar .event{display:grid;grid-template-columns:repeat(4,1fr);gap:0;background:var(--navy);color:#fff}
+#litship-meguro-seminar .event div{padding:16px 20px;border-right:1px solid rgba(255,255,255,.12);min-width:0}
+#litship-meguro-seminar .event div:last-child{border-right:0}
+#litship-meguro-seminar .event small{display:block;font-size:10px;font-weight:800;letter-spacing:.12em;color:var(--sun)}
+#litship-meguro-seminar .event strong{display:block;font-size:14px;line-height:1.55}
+#litship-meguro-seminar .event span{display:block;font-size:11px;opacity:.75}
+@media(max-width:900px){#litship-meguro-seminar .event{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:700px){
+  #litship-meguro-seminar .speaker-top{grid-template-columns:1fr;justify-items:start;padding:22px 16px}
+  #litship-meguro-seminar .speaker-body{grid-template-columns:1fr}
+  #litship-meguro-seminar .speaker-col{padding:20px 16px}
+  #litship-meguro-seminar .speaker-col+.speaker-col{border-left:0;border-top:1px solid var(--line)}
+  #litship-meguro-seminar .event{grid-template-columns:1fr}
+  #litship-meguro-seminar .event div{border-right:0;border-bottom:1px solid rgba(255,255,255,.12)}
+}
 </style>
 <div id="litship-meguro-seminar"><main class="wrap">
 
@@ -224,9 +270,55 @@
 <p>情報活動（インテリジェンス）の歴史と「協力者獲得」の仕組みをたどりながら、日常や組織での人間関係を考えた講演の記録です。参加していないメンバーにも主題と論旨が伝わるよう再構成し、Lit Shipで普段学んでいることとのつながりも整理しました。</p>
 <div class="hero-meta">
 <span class="hero-pill">📅 2026.11.06</span>
-<span class="hero-pill">🎤 講師：野村先生</span>
-<span class="hero-pill">📍 対面・目黒区</span>
+<span class="hero-pill">🎤 講師：稲村 悠 氏（元警視庁公安部捜査官）</span>
+<span class="hero-pill">📍 目黒区民センターホール</span>
 <span class="hero-pill">🔒 社内共有用</span>
+</div>
+</section>
+
+<!-- SPEAKER -->
+<section class="card speaker" id="speaker">
+<div class="speaker-top">
+<div class="speaker-badge"><span>元公安<b>捜査官</b></span></div>
+<div>
+<span class="speaker-eye">今回の講師</span>
+<h2 class="speaker-name">稲村 悠<small>氏</small></h2>
+<div class="speaker-role">Fortis Intelligence Advisory株式会社 代表取締役／一般社団法人 日本カウンターインテリジェンス協会 代表理事／外交安全保障アカデミー「OASIS」講師</div>
+</div>
+</div>
+<div class="speaker-body">
+<div class="speaker-col">
+<h3>CAREER｜経歴</h3>
+<ul class="timeline">
+<li><b>警視庁に入庁</b>刑事として強行犯を担当したのち、公安部の外事部門へ。</li>
+<li><b>公安部捜査官として諜報事件を捜査</b>諜報活動の取り締まりや情報収集活動に従事。技術流出に関する諜報事案の現場で、対人交渉術や信頼関係の構築法を体得。</li>
+<li><b>退職後、民間で不正調査・経済安全保障へ</b>大手金融機関での会計・品質の不正調査、大手コンサルティングファームでの経済安全保障などに携わる。</li>
+<li><b>Fortis Intelligence Advisoryを設立</b>企業向けのインテリジェンス・経済安全保障支援、講演・執筆など幅広く活動。</li>
+</ul>
+</div>
+<div class="speaker-col">
+<h3>BOOKS｜主な著書</h3>
+<div class="books">
+<div class="book hl"><div><strong>『謀略の技術 ― スパイが実践する籠絡（ヒュミント）の手法』</strong><span>中公新書ラクレ（2025年）｜今回の講演テーマに最も近い一冊</span></div></div>
+<div class="book"><div><strong>『元公安捜査官が教える「本音」「嘘」「秘密」を引き出す技術』</strong><span>WAVE出版</span></div></div>
+<div class="book"><div><strong>『企業インテリジェンス』</strong><span>講談社</span></div></div>
+<div class="book"><div><strong>『カウンターインテリジェンス ― 防諜論』</strong><span>育鵬社（2024年・共著）</span></div></div>
+</div>
+<h3 style="margin-top:18px">MEDIA｜寄稿・掲載メディア</h3>
+<div class="media">
+<a href="https://toyokeizai.net/list/author/8443" target="_blank" rel="noopener">東洋経済オンライン</a>
+<a href="https://diamond.jp/ud/authors/63fd60abb57622c7b1000000" target="_blank" rel="noopener">ダイヤモンド・オンライン</a>
+<a href="https://president.jp/articles/-/67301" target="_blank" rel="noopener">プレジデントオンライン</a>
+<a href="https://gendai.media/articles/-/139099" target="_blank" rel="noopener">現代ビジネス</a>
+<a href="https://bunshun.jp/bungeishunju/articles/h11478" target="_blank" rel="noopener">文藝春秋</a>
+</div>
+</div>
+</div>
+<div class="event">
+<div><small>EVENT</small><strong>第63回 目黒区商工まつり 経済講演会</strong><span>演題「諜報史から学ぶ人間関係の築き方」</span></div>
+<div><small>DATE</small><strong>2026年11月6日（金）</strong><span>18:00〜19:30</span></div>
+<div><small>PLACE</small><strong>目黒区民センターホール</strong><span>定員 先着400名</span></div>
+<div><small>ORGANIZER</small><strong>目黒区商工まつり運営委員会</strong><span>後援：目黒区しんきん協議会</span></div>
 </div>
 </section>
 
@@ -247,6 +339,7 @@
 <section class="card toc">
 <h3 class="toc-title">目次</h3>
 <div class="toc-grid">
+<a href="#speaker"><span class="toc-num">👤</span>講師紹介｜稲村 悠 氏</a>
 <a href="#summary"><span class="toc-num">0</span>3分でわかる講演の流れ</a>
 <a href="#intel"><span class="toc-num">1</span>情報活動とは何か</a>
 <a href="#humint"><span class="toc-num">2</span>人を介した情報収集の強みと限界</a>
@@ -468,7 +561,8 @@
 </section>
 <div class="card source">
 <strong>出典・作成について</strong><br>
-・目黒区セミナー（人間関係・インテリジェンス）｜講師：野村先生（閉会挨拶での呼称に基づく。氏名全体は未確定）｜2026年11月6日｜対面・目黒区<br>
+・第63回 目黒区商工まつり 経済講演会「諜報史から学ぶ人間関係の築き方」｜講師：稲村 悠 氏（Fortis Intelligence Advisory株式会社 代表取締役）｜2026年11月6日｜目黒区民センターホール｜主催：目黒区商工まつり運営委員会／後援：目黒区しんきん協議会<br>
+・講師の経歴・著書・掲載メディアは、当日の告知チラシ、講演冒頭の自己紹介、各出版社・メディアの著者紹介（東洋経済オンライン、国立国会図書館サーチほか）をもとに記載しています。<br>
 ・議事録：<a href="https://docs.google.com/document/d/1pqUAzu-7eA6SZhOPt0cFDc5hbPmRgHJhALJAJDSa1BE/edit" target="_blank" rel="noopener">【役員共有】目黒区セミナー議事録（Google ドキュメント）</a>（ボイスメモ「11月6日（18:05）」の文字起こしから再構成）<br>
 ・「Lit Shipでいうと」「Lit Shipの学びとのつながり」「線引き」「明日からのアクション」は、講演内容をもとにLit Shipの研修・理念と結びつけて作成した社内向けの解釈であり、講師の発言ではありません。
 </div>
