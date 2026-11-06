@@ -1,0 +1,476 @@
+<!-- Lit Ship 目黒区セミナー レポート / WordPress Custom HTML -->
+<style>
+#litship-meguro-seminar{
+  --navy:#1d2a57;--indigo:#3546a8;--sky:#eaf0ff;--sun:#ffc83d;--sun2:#fff4cf;--ink:#2f3340;--muted:#646a7a;--line:#e1e4ec;
+  --bg:#f6f7fb;--green:#2e9d5b;--green2:#e9f7ef;--red:#d9534f;--red2:#fdecec;--orange:#f08c2b;
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans JP","Hiragino Sans","Yu Gothic UI",sans-serif;
+  color:var(--ink);line-height:1.85;font-size:16px;background:var(--bg);padding:20px;border-radius:12px;
+  box-sizing:border-box;isolation:isolate;
+}
+#litship-meguro-seminar *,#litship-meguro-seminar *:before,#litship-meguro-seminar *:after{box-sizing:border-box}
+#litship-meguro-seminar a{text-decoration:none;color:var(--indigo)}
+#litship-meguro-seminar p{margin:0 0 10px}
+#litship-meguro-seminar .wrap{max-width:1120px;margin:0 auto}
+#litship-meguro-seminar .section{margin:0 0 44px;scroll-margin-top:20px}
+#litship-meguro-seminar .card{background:#fff;border:1px solid var(--line);border-radius:14px;box-shadow:0 4px 14px rgba(29,42,87,.07)}
+#litship-meguro-seminar .section-head{text-align:center;margin:0 0 20px}
+#litship-meguro-seminar .section-num{display:inline-block;background:var(--navy);color:#fff;font-size:11px;font-weight:800;letter-spacing:.12em;padding:4px 10px;border-radius:999px;margin-bottom:8px}
+#litship-meguro-seminar .section-head h2{margin:0;color:var(--navy);font-size:clamp(22px,3vw,30px);line-height:1.45}
+#litship-meguro-seminar .section-head p{margin:6px 0 0;color:var(--muted);font-size:14px}
+#litship-meguro-seminar .tag{display:inline-block;font-size:10px;font-weight:800;letter-spacing:.06em;padding:3px 8px;border-radius:6px;vertical-align:middle}
+#litship-meguro-seminar .tag-lecture{background:var(--sky);color:var(--indigo)}
+#litship-meguro-seminar .tag-proposal{background:#fff1e3;color:#a85b12}
+#litship-meguro-seminar .tag-ls{background:var(--sun);color:#5a4300}
+
+/* Hero */
+#litship-meguro-seminar .hero{position:relative;background:linear-gradient(135deg,var(--navy) 0%,var(--indigo) 70%,#5b6fd6 100%);color:#fff;padding:60px 32px 52px;border-radius:18px;text-align:center;margin-bottom:28px;box-shadow:0 12px 32px rgba(29,42,87,.3);overflow:hidden}
+#litship-meguro-seminar .hero:before{content:"";position:absolute;right:-80px;top:-80px;width:260px;height:260px;border-radius:50%;background:radial-gradient(circle,rgba(255,200,61,.55),rgba(255,200,61,0) 70%)}
+#litship-meguro-seminar .hero-eye{position:relative;font-size:11px;font-weight:800;letter-spacing:.18em;opacity:.8;margin-bottom:12px}
+#litship-meguro-seminar .hero h1{position:relative;margin:0;display:flex;flex-direction:column;align-items:center;gap:4px;line-height:1.2}
+#litship-meguro-seminar .hero-label{color:var(--sun);font-size:clamp(17px,2.4vw,26px);font-weight:800}
+#litship-meguro-seminar .hero-line{display:block;font-weight:800;font-size:clamp(28px,4.8vw,48px);letter-spacing:-.02em}
+#litship-meguro-seminar .hero p{position:relative;max-width:760px;margin:18px auto 0;font-size:15px;opacity:.95}
+#litship-meguro-seminar .hero-meta{position:relative;display:flex;flex-wrap:wrap;justify-content:center;gap:8px;margin-top:22px}
+#litship-meguro-seminar .hero-pill{display:inline-flex;padding:7px 14px;border:1px solid rgba(255,255,255,.4);background:rgba(255,255,255,.13);border-radius:999px;font-size:12px;font-weight:700}
+
+/* Intro */
+#litship-meguro-seminar .intro{padding:30px;margin-bottom:28px}
+#litship-meguro-seminar .intro-label{display:inline-block;background:var(--navy);color:#fff;padding:5px 10px;border-radius:8px;font-size:10px;font-weight:800;letter-spacing:.06em}
+#litship-meguro-seminar .intro h2{margin:12px 0 8px;color:var(--navy);font-size:clamp(21px,2.8vw,27px);line-height:1.5}
+#litship-meguro-seminar .intro p{color:var(--muted)}
+#litship-meguro-seminar .two-lens{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:18px}
+#litship-meguro-seminar .lens{padding:18px;border-radius:12px;border:2px solid}
+#litship-meguro-seminar .lens-guard{background:var(--red2);border-color:#f2b8b6}
+#litship-meguro-seminar .lens-build{background:var(--green2);border-color:#a9dcbd}
+#litship-meguro-seminar .lens-ico{font-size:26px;line-height:1}
+#litship-meguro-seminar .lens strong{display:block;font-size:15px;margin:6px 0 4px}
+#litship-meguro-seminar .lens span{display:block;color:var(--muted);font-size:13px;line-height:1.7}
+#litship-meguro-seminar .note{margin-top:14px;padding:12px 14px;background:#f8f9fc;border-left:4px solid #b9c0d4;border-radius:8px;color:var(--muted);font-size:12px;line-height:1.75}
+
+/* Summary flow */
+#litship-meguro-seminar .flow{display:grid;grid-template-columns:1fr auto 1fr auto 1fr;gap:10px;align-items:stretch}
+#litship-meguro-seminar .flow-step{padding:20px;border-radius:14px;background:#fff;border:2px solid var(--line)}
+#litship-meguro-seminar .flow-step.goal{background:var(--sun2);border-color:var(--sun)}
+#litship-meguro-seminar .flow-num{font-size:10px;font-weight:800;color:#9aa1b4;letter-spacing:.12em}
+#litship-meguro-seminar .flow-ico{font-size:26px;margin:4px 0 6px}
+#litship-meguro-seminar .flow-step strong{display:block;font-size:15px;color:var(--navy);margin-bottom:4px}
+#litship-meguro-seminar .flow-step span{display:block;font-size:13px;color:var(--muted);line-height:1.7}
+#litship-meguro-seminar .flow-arrow{display:grid;place-items:center;color:var(--indigo);font-weight:800;font-size:20px}
+#litship-meguro-seminar .keymsg{margin-top:16px;padding:20px 22px;background:var(--navy);color:#fff;border-radius:14px;text-align:center}
+#litship-meguro-seminar .keymsg small{display:block;color:var(--sun);font-size:11px;font-weight:800;letter-spacing:.14em;margin-bottom:4px}
+#litship-meguro-seminar .keymsg strong{font-size:clamp(17px,2.2vw,21px);line-height:1.6}
+
+/* TOC */
+#litship-meguro-seminar .toc{padding:22px 24px;margin-bottom:40px}
+#litship-meguro-seminar .toc-title{margin:0 0 12px;color:var(--navy);font-size:17px}
+#litship-meguro-seminar .toc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+#litship-meguro-seminar .toc-grid a{display:flex;gap:10px;align-items:center;padding:10px 12px;background:#f6f7fb;border-radius:10px;color:var(--ink);font-size:13px;font-weight:700}
+#litship-meguro-seminar .toc-grid a:hover{background:var(--sky)}
+#litship-meguro-seminar .toc-num{width:26px;height:26px;border-radius:50%;display:grid;place-items:center;background:var(--indigo);color:#fff;font-size:11px;flex:none}
+#litship-meguro-seminar .toc-grid a.ls .toc-num{background:var(--sun);color:#5a4300}
+
+/* Generic blocks */
+#litship-meguro-seminar .block{padding:24px 26px;margin-bottom:14px}
+#litship-meguro-seminar .block h3{margin:0 0 8px;color:var(--navy);font-size:19px;line-height:1.5}
+#litship-meguro-seminar .block p{color:var(--muted);font-size:14px}
+#litship-meguro-seminar .compare{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:14px 0 4px}
+#litship-meguro-seminar .compare-item{padding:18px;border-radius:12px;background:#f6f7fb;border:1px solid var(--line)}
+#litship-meguro-seminar .compare-item b{display:block;font-size:22px;color:var(--indigo);line-height:1.3}
+#litship-meguro-seminar .compare-item em{display:block;font-style:normal;font-size:11px;font-weight:800;color:#9aa1b4;letter-spacing:.1em;margin-bottom:6px}
+#litship-meguro-seminar .compare-item span{display:block;font-size:13px;color:var(--muted);line-height:1.7}
+
+/* INT grid */
+#litship-meguro-seminar .int-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:14px 0}
+#litship-meguro-seminar .int{padding:16px;border-radius:12px;background:#fff;border:1px solid var(--line);text-align:center}
+#litship-meguro-seminar .int.main{background:var(--sky);border:2px solid var(--indigo)}
+#litship-meguro-seminar .int-ico{font-size:28px}
+#litship-meguro-seminar .int strong{display:block;font-size:14px;color:var(--navy);margin-top:4px}
+#litship-meguro-seminar .int small{display:block;font-size:10px;font-weight:800;color:#9aa1b4;letter-spacing:.08em}
+#litship-meguro-seminar .int span{display:block;font-size:12px;color:var(--muted);line-height:1.65;margin-top:6px}
+
+/* Lesson box */
+#litship-meguro-seminar .lesson{display:flex;gap:14px;align-items:flex-start;padding:18px 20px;border-radius:12px;background:var(--sun2);border:2px solid var(--sun);margin-top:12px}
+#litship-meguro-seminar .lesson-ico{width:42px;height:42px;border-radius:50%;background:var(--sun);display:grid;place-items:center;font-size:20px;flex:none}
+#litship-meguro-seminar .lesson strong{display:block;color:#5a4300;font-size:15px;margin-bottom:2px}
+#litship-meguro-seminar .lesson span{display:block;color:#6b5a2b;font-size:13px;line-height:1.7}
+
+/* LS bridge (small) */
+#litship-meguro-seminar .bridge{margin-top:12px;padding:16px 18px;border-radius:12px;background:#fff;border:2px dashed var(--sun)}
+#litship-meguro-seminar .bridge-head{display:flex;align-items:center;gap:8px;margin-bottom:6px}
+#litship-meguro-seminar .bridge-head strong{font-size:14px;color:var(--navy)}
+#litship-meguro-seminar .bridge p{font-size:13px;color:var(--muted);margin:0}
+
+/* Recruit steps */
+#litship-meguro-seminar .steps{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;margin:14px 0}
+#litship-meguro-seminar .step{position:relative;padding:14px 10px;background:#f6f7fb;border:1px solid var(--line);border-radius:12px;text-align:center}
+#litship-meguro-seminar .step-n{width:28px;height:28px;margin:0 auto 6px;border-radius:50%;background:var(--indigo);color:#fff;display:grid;place-items:center;font-size:12px;font-weight:800}
+#litship-meguro-seminar .step strong{display:block;font-size:13px;color:var(--navy)}
+#litship-meguro-seminar .step span{display:block;font-size:11px;color:var(--muted);line-height:1.55;margin-top:2px}
+#litship-meguro-seminar .chips{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0}
+#litship-meguro-seminar .chip{padding:6px 12px;border-radius:999px;background:#fff;border:1px solid var(--line);font-size:13px;font-weight:700;color:var(--ink)}
+#litship-meguro-seminar .chip.add{border-style:dashed;color:var(--indigo)}
+#litship-meguro-seminar .warn{display:flex;gap:12px;padding:14px 16px;border-radius:12px;background:var(--red2);border:1px solid #f2b8b6;margin-top:12px}
+#litship-meguro-seminar .warn-ico{font-size:20px;flex:none}
+#litship-meguro-seminar .warn p{margin:0;font-size:13px;color:#7a3431;line-height:1.7}
+#litship-meguro-seminar .cases{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:12px}
+#litship-meguro-seminar .case{padding:18px;border-radius:12px;background:#fff;border:1px solid var(--line)}
+#litship-meguro-seminar .case strong{display:block;color:var(--navy);font-size:14px;margin-bottom:4px}
+#litship-meguro-seminar .case span{display:block;font-size:13px;color:var(--muted);line-height:1.7}
+
+/* Relationship cards */
+#litship-meguro-seminar .rel-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+#litship-meguro-seminar .rel{padding:22px;position:relative;overflow:hidden}
+#litship-meguro-seminar .rel-num{position:absolute;right:16px;top:8px;font-size:48px;font-weight:900;color:#eef0f7;line-height:1}
+#litship-meguro-seminar .rel-ico{font-size:28px}
+#litship-meguro-seminar .rel h3{position:relative;margin:6px 0 6px;color:var(--navy);font-size:17px;line-height:1.5}
+#litship-meguro-seminar .rel p{position:relative;font-size:13px;color:var(--muted);margin:0 0 8px}
+#litship-meguro-seminar .rel .example{position:relative;padding:10px 12px;background:#f6f7fb;border-radius:8px;font-size:12px;color:var(--ink);line-height:1.7}
+#litship-meguro-seminar .rel .example b{color:var(--indigo)}
+#litship-meguro-seminar .rel.wide{grid-column:1/-1;background:linear-gradient(135deg,#fff,var(--green2));border-color:#a9dcbd}
+
+/* Lit Ship section */
+#litship-meguro-seminar .ls-wrap{padding:30px;border-radius:18px;background:linear-gradient(160deg,#fffaf0 0%,#fff 55%);border:2px solid var(--sun);box-shadow:0 8px 24px rgba(240,180,30,.15)}
+#litship-meguro-seminar .ls-philo{display:grid;grid-template-columns:auto 1fr;gap:18px;align-items:center;padding:20px;border-radius:14px;background:var(--navy);color:#fff;margin-bottom:22px}
+#litship-meguro-seminar .ls-sun{width:68px;height:68px;border-radius:50%;background:radial-gradient(circle at 35% 35%,#ffe28a,var(--sun));display:grid;place-items:center;font-size:32px;box-shadow:0 0 0 6px rgba(255,200,61,.2)}
+#litship-meguro-seminar .ls-philo small{display:block;color:var(--sun);font-size:11px;font-weight:800;letter-spacing:.14em}
+#litship-meguro-seminar .ls-philo strong{display:block;font-size:clamp(18px,2.4vw,23px);line-height:1.5}
+#litship-meguro-seminar .ls-philo span{display:block;font-size:13px;opacity:.85;line-height:1.7;margin-top:4px}
+#litship-meguro-seminar .map-table{display:grid;gap:10px}
+#litship-meguro-seminar .map-row{display:grid;grid-template-columns:1fr 40px 1fr;gap:8px;align-items:stretch}
+#litship-meguro-seminar .map-cell{padding:16px 18px;border-radius:12px;background:#fff;border:1px solid var(--line)}
+#litship-meguro-seminar .map-cell.sem{border-left:5px solid var(--indigo)}
+#litship-meguro-seminar .map-cell.ls{border-left:5px solid var(--sun);background:#fffdf5}
+#litship-meguro-seminar .map-cell small{display:block;font-size:10px;font-weight:800;letter-spacing:.1em;color:#9aa1b4;margin-bottom:2px}
+#litship-meguro-seminar .map-cell strong{display:block;font-size:14px;color:var(--navy);line-height:1.55;margin-bottom:4px}
+#litship-meguro-seminar .map-cell span{display:block;font-size:12px;color:var(--muted);line-height:1.7}
+#litship-meguro-seminar .map-link{display:grid;place-items:center;color:var(--orange);font-size:20px;font-weight:900}
+#litship-meguro-seminar .map-head{display:grid;grid-template-columns:1fr 40px 1fr;gap:8px;font-size:11px;font-weight:800;letter-spacing:.1em;color:var(--muted);text-align:center}
+#litship-meguro-seminar .formula{margin:22px 0 0;padding:20px;border-radius:14px;background:#fff;border:1px solid var(--line);text-align:center}
+#litship-meguro-seminar .formula small{display:block;font-size:11px;font-weight:800;color:#9aa1b4;letter-spacing:.12em}
+#litship-meguro-seminar .formula-eq{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:8px;margin:10px 0}
+#litship-meguro-seminar .formula-eq b{padding:8px 14px;border-radius:10px;background:var(--sky);color:var(--navy);font-size:16px}
+#litship-meguro-seminar .formula-eq b.hl{background:var(--sun);color:#5a4300}
+#litship-meguro-seminar .formula-eq i{font-style:normal;font-weight:900;color:var(--muted)}
+#litship-meguro-seminar .formula p{font-size:13px;color:var(--muted);margin:0}
+
+/* Do / Don't */
+#litship-meguro-seminar .dodont{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+#litship-meguro-seminar .dd{padding:22px;border-radius:14px;border:2px solid}
+#litship-meguro-seminar .dd.do{background:var(--green2);border-color:#a9dcbd}
+#litship-meguro-seminar .dd.dont{background:var(--red2);border-color:#f2b8b6}
+#litship-meguro-seminar .dd h3{margin:0 0 10px;font-size:17px}
+#litship-meguro-seminar .dd.do h3{color:#1f6e40}
+#litship-meguro-seminar .dd.dont h3{color:#9b2f2b}
+#litship-meguro-seminar .dd ul{margin:0;padding:0;list-style:none;display:grid;gap:8px}
+#litship-meguro-seminar .dd li{position:relative;padding:10px 12px 10px 36px;background:rgba(255,255,255,.75);border-radius:10px;font-size:13px;line-height:1.65}
+#litship-meguro-seminar .dd li:before{position:absolute;left:12px;top:10px;font-weight:900}
+#litship-meguro-seminar .dd.do li:before{content:"○";color:var(--green)}
+#litship-meguro-seminar .dd.dont li:before{content:"×";color:var(--red)}
+
+/* Action */
+#litship-meguro-seminar .action-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+#litship-meguro-seminar .action{padding:22px}
+#litship-meguro-seminar .action-head{display:flex;align-items:center;gap:10px;margin-bottom:12px}
+#litship-meguro-seminar .action-ico{width:44px;height:44px;border-radius:12px;display:grid;place-items:center;font-size:22px;background:var(--sky);flex:none}
+#litship-meguro-seminar .action-head strong{display:block;font-size:15px;color:var(--navy);line-height:1.4}
+#litship-meguro-seminar .action-head span{display:block;font-size:11px;color:var(--muted)}
+#litship-meguro-seminar .check{margin:0;padding:0;list-style:none;display:grid;gap:8px}
+#litship-meguro-seminar .check li{display:flex;gap:8px;font-size:13px;line-height:1.65;padding:9px 10px;background:#f6f7fb;border-radius:8px}
+#litship-meguro-seminar .check li:before{content:"✓";flex:none;width:18px;height:18px;border-radius:5px;background:var(--green);color:#fff;font-size:11px;font-weight:900;display:grid;place-items:center;margin-top:2px}
+
+/* Takeaways */
+#litship-meguro-seminar .take-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+#litship-meguro-seminar .take{display:flex;gap:14px;padding:20px}
+#litship-meguro-seminar .take-n{width:38px;height:38px;border-radius:50%;background:var(--navy);color:var(--sun);display:grid;place-items:center;font-weight:900;flex:none}
+#litship-meguro-seminar .take strong{display:block;font-size:15px;color:var(--navy);line-height:1.55;margin-bottom:4px}
+#litship-meguro-seminar .take span{display:block;font-size:13px;color:var(--muted);line-height:1.7}
+
+/* Footer */
+#litship-meguro-seminar .closing{text-align:center;padding:36px 26px;border-radius:18px;background:linear-gradient(135deg,var(--navy),var(--indigo));color:#fff}
+#litship-meguro-seminar .closing small{display:block;color:var(--sun);font-size:11px;font-weight:800;letter-spacing:.16em;margin-bottom:8px}
+#litship-meguro-seminar .closing strong{display:block;font-size:clamp(19px,2.6vw,26px);line-height:1.6}
+#litship-meguro-seminar .closing p{max-width:720px;margin:12px auto 0;font-size:14px;opacity:.9}
+#litship-meguro-seminar .source{margin-top:18px;padding:18px 20px;font-size:12px;color:var(--muted);line-height:1.8}
+#litship-meguro-seminar .source strong{color:var(--ink)}
+
+@media(max-width:900px){
+  #litship-meguro-seminar .int-grid{grid-template-columns:repeat(2,1fr)}
+  #litship-meguro-seminar .steps{grid-template-columns:repeat(3,1fr)}
+  #litship-meguro-seminar .action-grid{grid-template-columns:1fr}
+  #litship-meguro-seminar .toc-grid{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:700px){
+  #litship-meguro-seminar{padding:12px;font-size:15px}
+  #litship-meguro-seminar .hero{padding:44px 18px 40px}
+  #litship-meguro-seminar .intro,#litship-meguro-seminar .ls-wrap{padding:20px 16px}
+  #litship-meguro-seminar .block{padding:20px 16px}
+  #litship-meguro-seminar .two-lens,#litship-meguro-seminar .compare,#litship-meguro-seminar .cases,#litship-meguro-seminar .rel-grid,
+  #litship-meguro-seminar .dodont,#litship-meguro-seminar .take-grid,#litship-meguro-seminar .toc-grid{grid-template-columns:1fr}
+  #litship-meguro-seminar .flow{grid-template-columns:1fr}
+  #litship-meguro-seminar .flow-arrow{transform:rotate(90deg);padding:2px 0}
+  #litship-meguro-seminar .steps{grid-template-columns:repeat(2,1fr)}
+  #litship-meguro-seminar .map-head{display:none}
+  #litship-meguro-seminar .map-row{grid-template-columns:1fr}
+  #litship-meguro-seminar .map-link{transform:rotate(90deg);height:24px}
+  #litship-meguro-seminar .ls-philo{grid-template-columns:1fr;text-align:center;justify-items:center}
+}
+</style>
+<div id="litship-meguro-seminar"><main class="wrap">
+
+<!-- HERO -->
+<section class="hero">
+<div class="hero-eye">LIT SHIP SEMINAR REPORT</div>
+<h1><span class="hero-label">目黒区セミナー レポート</span><span class="hero-line">人を深く知る、という技術。</span></h1>
+<p>情報活動（インテリジェンス）の歴史と「協力者獲得」の仕組みをたどりながら、日常や組織での人間関係を考えた講演の記録です。参加していないメンバーにも主題と論旨が伝わるよう再構成し、Lit Shipで普段学んでいることとのつながりも整理しました。</p>
+<div class="hero-meta">
+<span class="hero-pill">📅 2026.11.06</span>
+<span class="hero-pill">🎤 講師：野村先生</span>
+<span class="hero-pill">📍 対面・目黒区</span>
+<span class="hero-pill">🔒 社内共有用</span>
+</div>
+</section>
+
+<!-- INTRO -->
+<section class="card intro">
+<span class="intro-label">はじめに｜このページの読み方</span>
+<h2>大事なのは「特別な話術」ではなく、<br>相手を深く知り、時間をかけて関係を築くこと。</h2>
+<p>講師が繰り返し強調したのは、その場で本音を引き出すテクニックよりも、相手の文化・立場・悩みを理解し、関係を積み重ねていく過程の重要性でした。</p>
+<p>ただし講演には、信頼や共感が<strong>情報を得るために利用された事例</strong>も含まれます。このページでは、次の2つの視点をはっきり分けて読んでください。</p>
+<div class="two-lens">
+<div class="lens lens-guard"><div class="lens-ico">🛡️</div><strong>警戒の視点（情報活動の分析）</strong><span>理解や共感、親身なふるまいは、相手を取り込む手段としても使われ得る。仕組みを知ることで、自分や仲間が「狙われる側」になったときに気づける。</span></div>
+<div class="lens lens-build"><div class="lens-ico">🤝</div><strong>関係づくりの視点（日常・組織）</strong><span>相手に関心を持ち、背景を知り、先に与え、気持ちに寄り添う。誠実な関係を築くために、私たちが日常で実践したいこと。</span></div>
+</div>
+<div class="note">本ページは、ボイスメモ「11月6日（18:05）」の文字起こしから再構成した議事録をもとに作成しています。発言の逐語録ではありません。制度説明・歴史事例・情報機関の運用に関する内容は<strong>講演で紹介された内容・講師の見解</strong>であり、書籍や一次資料による独立した事実確認は行っていません。文字起こしで不明瞭な人名・年号・人数などは扱っていません。<br>また、本ページは欺瞞や依存の形成、弱みの利用を社内で推奨するものではありません。</div>
+</section>
+
+<!-- TOC -->
+<section class="card toc">
+<h3 class="toc-title">目次</h3>
+<div class="toc-grid">
+<a href="#summary"><span class="toc-num">0</span>3分でわかる講演の流れ</a>
+<a href="#intel"><span class="toc-num">1</span>情報活動とは何か</a>
+<a href="#humint"><span class="toc-num">2</span>人を介した情報収集の強みと限界</a>
+<a href="#recruit"><span class="toc-num">3</span>協力関係が生まれる背景</a>
+<a href="#relation"><span class="toc-num">4</span>相手を理解する関係づくり</a>
+<a href="#litship" class="ls"><span class="toc-num">★</span>Lit Shipの学びとのつながり</a>
+<a href="#line" class="ls"><span class="toc-num">★</span>Lit Shipとしての線引き</a>
+<a href="#action" class="ls"><span class="toc-num">★</span>明日からのアクション</a>
+<a href="#takeaway"><span class="toc-num">✓</span>持ち帰る学び</a>
+</div>
+</section>
+
+<!-- 0. SUMMARY -->
+<section class="section" id="summary">
+<div class="section-head"><span class="section-num">SUMMARY</span><h2>3分でわかる講演の流れ</h2><p>前半は「情報活動の仕組み」、後半は「人間関係への応用」</p></div>
+<div class="flow">
+<div class="flow-step"><div class="flow-num">PART 1</div><div class="flow-ico">🛰️</div><strong>情報活動の全体像</strong><span>情報を「集める」ことと「影響を与える」ことの違い。外国からの干渉に対する制度上の問題提起。</span></div>
+<div class="flow-arrow">→</div>
+<div class="flow-step"><div class="flow-num">PART 2</div><div class="flow-ico">🧩</div><strong>人を介した情報と協力関係</strong><span>人から得る情報の強みと危うさ。協力関係は金銭だけでは説明できず、関係の積み重ねから生まれる。</span></div>
+<div class="flow-arrow">→</div>
+<div class="flow-step goal"><div class="flow-num">PART 3</div><div class="flow-ico">☀️</div><strong>日常・組織への視点</strong><span>背景を知る。先に与える。気持ちを理解する。解決できなくても寄り添う。誠実さと、働きかける勇気。</span></div>
+</div>
+<div class="keymsg"><small>KEY MESSAGE</small><strong>本音を引き出す「話術」より、<br>相手を深く知り、時間をかけて関係を築くこと。</strong></div>
+</section>
+
+<!-- 1. INTEL -->
+<section class="section" id="intel">
+<div class="section-head"><span class="section-num">CHAPTER 1</span><h2>情報活動とは何か</h2><p>情報を集めることと、相手や社会を動かすことは同じではない</p></div>
+<div class="card block">
+<h3>「諜報」と「謀略」を分けて考える <span class="tag tag-lecture">講師の整理</span></h3>
+<p>世論や政治への影響工作まで一括して「スパイ活動」と呼ばれがちですが、講師はこの2つを区別しました。講演では、両方を含む広い意味で「情報活動」という言葉を使っています。</p>
+<div class="compare">
+<div class="compare-item"><em>COLLECT</em><b>諜報</b><span>目的を隠して、秘密裏に情報を<strong>収集</strong>すること。</span></div>
+<div class="compare-item"><em>INFLUENCE</em><b>謀略</b><span>さまざまな工作を通じて、目的の実現を図ること。世論や政治への<strong>影響工作</strong>も含む、より広い概念。</span></div>
+</div>
+<p style="margin-top:12px">具体例として紹介されたのが、ソ連の情報機関KGBによる日本での活動です。講師の説明では、任務には外交・政治に関する情報収集だけでなく<strong>ソ連に好意的な世論の形成</strong>も含まれており、狙われるのは「重要情報にアクセスできる人」や「社会的な影響力を持つ人」だったとされます。</p>
+</div>
+<div class="card block">
+<h3>「盗む」だけでなく「人と資金を通じた干渉」にも目を向ける <span class="tag tag-proposal">講師の政策提案</span></h3>
+<p>いわゆるスパイ防止法の議論について、講師は情報窃取の取り締まりだけに焦点を当てるべきではないと主張しました。外国情報機関の指示で無届けで活動する人への対応や、関係組織への資金援助の規制を重視し、「外国代理人法」「干渉防止法」の必要性を述べています。</p>
+<div class="note" style="margin-top:6px">これは講師の政策上の提案です。特定の法律の成立状況や現行法の適用範囲を説明するものではありません。</div>
+</div>
+</section>
+
+<!-- 2. HUMINT -->
+<section class="section" id="humint">
+<div class="section-head"><span class="section-num">CHAPTER 2</span><h2>人を介した情報収集 ― 強みと限界</h2><p>情報を得る手段にはそれぞれ役割がある。そのうえで本論は「人」</p></div>
+<div class="card block">
+<h3>情報を得る4つの方法</h3>
+<div class="int-grid">
+<div class="int"><div class="int-ico">📚</div><small>OSINT</small><strong>公開情報</strong><span>ネット検索だけでなく、書籍・放送・動画など一般にアクセスできる情報全般。</span></div>
+<div class="int"><div class="int-ico">🛰️</div><small>IMINT</small><strong>画像分析</strong><span>写っている物だけでなく、影や車両の轍といった「変化」から状況を推測する。</span></div>
+<div class="int"><div class="int-ico">📡</div><small>SIGINT</small><strong>通信の傍受・分析</strong><span>通信を捉えて分析する技術的な手段。</span></div>
+<div class="int main"><div class="int-ico">🧑‍🤝‍🧑</div><small>HUMINT</small><strong>人を介した情報収集</strong><span>技術だけでは得にくい情報に接近できる。講演の本論。</span></div>
+</div>
+<p>講師は、通信などの技術への依存が高まる一方で、<strong>人とのつながりを通じて情報を得る能力が軽視される危険</strong>にも言及しました。</p>
+</div>
+<div class="card block">
+<h3>「カーブボール」の事例 ― 証言は、そのまま確かな情報ではない</h3>
+<p>イラクの大量破壊兵器に関する情報源として知られる「カーブボール」。講師の説明では、亡命を求める人物の証言が情報機関の間で共有され、信頼性に問題があったにもかかわらず、重大な政策判断に影響したとされています。</p>
+<p>ほかにも、日本におけるソ連の協力者や、ソ連の通信を解読した「ベノナ・プロジェクト」などが、人的な協力関係が政治や組織の内部に及び得る例として紹介されました。</p>
+<div class="lesson"><div class="lesson-ico">💡</div><div><strong>「重要な話を聞けた」ことと「その話が真実である」ことは別。</strong><span>人から得る情報には、虚偽や、提供者自身の事情・動機が入り込む余地がある。協力者を持つ強みと、証言に依存する危うさは表裏一体。</span></div></div>
+<div class="bridge"><div class="bridge-head"><span class="tag tag-ls">Lit Shipでいうと</span><strong>営業のヒアリングも、AIの出力も「裏を取る」</strong></div><p>営業現場でお客様から聞いた話、チーム内で回ってきた情報、そしてAIが返してきた答え。どれも「聞けた・出てきた」だけでは事実とは限りません。AI活用研修で伝えている「AIの出力は一次情報で確かめる」姿勢と同じく、情報源と根拠を確認するクセをつけましょう。</p></div>
+</div>
+</section>
+
+<!-- 3. RECRUIT -->
+<section class="section" id="recruit">
+<div class="section-head"><span class="section-num">CHAPTER 3</span><h2>協力関係が生まれる背景</h2><p>金銭だけでは説明できない ― 関係は「積み重ね」から生まれる</p></div>
+<div class="card block">
+<h3>「リクルート」＝ 協力者を獲得すること <span class="tag tag-lecture">講師の整理</span></h3>
+<p>ここでの「リクルート」は一般的な採用活動ではなく、情報活動への協力者を獲得することを指します。講師はその過程を次の段階で整理しました（選定と調査は行き来しながら進む）。</p>
+<div class="steps">
+<div class="step"><div class="step-n">1</div><strong>対象者の選定</strong><span>誰に接近するか</span></div>
+<div class="step"><div class="step-n">2</div><strong>基礎調査</strong><span>相手を知る</span></div>
+<div class="step"><div class="step-n">3</div><strong>接近</strong><span>関係の入口</span></div>
+<div class="step"><div class="step-n">4</div><strong>獲得</strong><span>協力関係の成立</span></div>
+<div class="step"><div class="step-n">5</div><strong>維持・運営</strong><span>関係を続ける</span></div>
+</div>
+<p>重視されるのは、単に知り合うことではなく「<strong>なぜその人が協力するのか</strong>」を理解すること。講師は動機や弱みに関わる要素として次を挙げました。</p>
+<div class="chips">
+<span class="chip">💰 金銭</span><span class="chip">🧭 思想・信条</span><span class="chip">🔐 不都合な事情（脅迫）</span><span class="chip">👏 承認欲求</span>
+<span class="chip add">❤️ 愛情</span><span class="chip add">😤 不満</span><span class="chip add">😮‍💨 ストレス</span><span class="chip add">🤫 秘密</span>
+</div>
+<p style="font-size:12px">※点線の4つは講師自身による追加の整理</p>
+<div class="warn"><div class="warn-ico">⚠️</div><p>これは協力者獲得の<strong>仕組みを説明するための枠組み</strong>です。個人の属性から動機を断定したり、職場で相手の弱みを利用したりすることを勧めるものではありません。</p></div>
+</div>
+<div class="card block">
+<h3>歴史事例が示す「支援」と「取り込み」の近さ</h3>
+<div class="cases">
+<div class="case"><strong>🇩🇪 東ドイツ秘密警察の手法</strong><span>秘密を暴露すると脅すだけでなく、「秘密を共有し、守る立場」を装って関係に入り込む。表面上は理解や保護に見えるふるまいも、取り込みに使われ得る。</span></div>
+<div class="case"><strong>🇯🇵 自衛隊関係者への接近事件（講演の中心事例）</strong><span>家族の病気や経済的負担を把握したうえで接近し、精神的な支えとなり、家族を失った悲しみにまで寄り添う過程があったとされる。講師は、秘密を渡す場面より<strong>その前に積み重ねられた関係</strong>に着目した。</span></div>
+</div>
+<p style="margin-top:12px">さらに、明白な違法行為に至らなくても、組織の規範に触れるかどうかの境界で情報提供を続けさせる関係にも言及がありました。これは情報機関の運用の説明であり、「法律上問題がなければ情報を渡してよい」という趣旨ではありません。防諜（相手の情報活動を防ぐこと）として、誤った情報を流して相手の判断や組織を混乱させる活動も紹介されました。</p>
+<div class="bridge"><div class="bridge-head"><span class="tag tag-ls">Lit Shipでいうと</span><strong>「警戒の視点」として持ち帰る</strong></div><p>私たちは日々、多くの社外の方と出会います。急に距離を詰めて親身になり、社内の情報やお客様の情報を聞きたがる相手には、一歩引いて考える視点を持っておきましょう。「法律的にセーフか」ではなく「会社やお客様との約束に照らしてどうか」で判断し、迷ったらリーダーに相談を。</p></div>
+</div>
+</section>
+
+<!-- 4. RELATION -->
+<section class="section" id="relation">
+<div class="section-head"><span class="section-num">CHAPTER 4</span><h2>相手を理解する関係づくり</h2><p>講師が「日常・組織」へつないだ視点。特殊な調査ではなく、普通に相手へ関心を持つこと</p></div>
+<div class="rel-grid">
+<div class="card rel"><div class="rel-num">01</div><div class="rel-ico">🗾</div><h3>本人の情報だけでなく、その人を育てた背景を見る</h3><p>好みだけでなく、育った地域・文化・歴史・経歴に関心を向ける。SNSの監視や特殊な調査ではなく、普通に相手へ関心を持つことが出発点。</p><div class="example"><b>逸話：</b>企業経営者に会う前に、相手の地域文化を調べ、現地の歌や踊りを学んで交流した人物がいた。プロフィールを覚えるだけでなく、相手が親しみを感じる文化的背景まで理解する。</div></div>
+<div class="card rel"><div class="rel-num">02</div><div class="rel-ico">🧭</div><h3>悩みは「突飛な想像」ではなく「立場」から考える</h3><p>限られた情報から特別な事情を想像するのではなく、その人の立場に伴う負担から考える。介護や闘病などの情報が加われば、見立ても変わる。</p><div class="example"><b>例：</b>成功している経営者でも、会社を安定して続ける責任とリスクを常に負っている。</div></div>
+<div class="card rel"><div class="rel-num">03</div><div class="rel-ico">🎁</div><h3>先に与える。出会った瞬間から成果を求めない</h3><p>新しい関係を築くには、双方に時間や負担がかかる。だからこそ働きかける側がまず与える姿勢を示し、すぐに見返りを求めない。</p><div class="example"><b>ポイント：</b>関係づくりには「時間」が伴うことを前提にする。</div></div>
+<div class="card rel"><div class="rel-num">04</div><div class="rel-ico">💗</div><h3>表面的な仕草より、気持ちを理解する</h3><p>ミラーリング（相手と似た仕草をする）を超えて、相手が大切にしている人や感情を理解することを講師は重視した。</p><div class="example"><b>職場の例：</b>子どもの誕生日に残業している社員に、上司が「今日は早く帰りなよ」と声をかける。誕生日を覚えていた驚き以上に、「今日、子どもに会いたい」という<b>気持ちを分かってもらえた</b>と感じることに意味がある。</div></div>
+<div class="card rel wide"><div class="rel-num">05</div><div class="rel-ico">🌱</div><h3>解決できないことにも、寄り添う余地がある</h3><p>病気を治すことも、金銭的な援助を続けることも、誰にでもできるわけではない。それでも相手の状況を理解し、寄り添うことはできる。採用や社員との関係でも、「いつか離れるかもしれない」と関心を失うのではなく、相手を理解しようとすることが大切。講師は締めくくりに、<strong>誠実に接する姿勢</strong>と、<strong>関係を築くために自分から働きかける勇気</strong>を強調した。</p></div>
+</div>
+</section>
+
+<!-- LIT SHIP -->
+<section class="section" id="litship">
+<div class="section-head"><span class="section-num" style="background:var(--sun);color:#5a4300">LIT SHIP × SEMINAR</span><h2>Lit Shipで学んでいることとのつながり</h2><p>講演の「関係づくりの視点」は、私たちが普段の研修や現場で大事にしていることと重なっていた</p></div>
+<div class="ls-wrap">
+<div class="ls-philo">
+<div class="ls-sun">☀️</div>
+<div><small>LIT SHIP PHILOSOPHY</small><strong>理念「楽しみな晴れ」｜ビジョン「日本一楽しめる会社をつくる」</strong><span>自分が楽しむことで、周りも明るくなる。「好きな人と好きなことをする」ために、まず相手を知り、関係を築く。講演が語った「人を深く知る」ことは、その土台です。</span></div>
+</div>
+<div class="map-head"><div>セミナーの学び</div><div></div><div>Lit Shipで教えていること</div></div>
+<div class="map-table">
+<div class="map-row">
+<div class="map-cell sem"><small>CHAPTER 4-01</small><strong>本人だけでなく、育った背景まで理解する</strong><span>地域・文化・歴史・経歴への関心。</span></div>
+<div class="map-link">⇄</div>
+<div class="map-cell ls"><small>人生のバランスシート／理想の未来の言語化</small><strong>メンバーの「目的」と人生全体を知る</strong><span>健康・人間関係・自己成長などの幸福指標と仕事のベクトルを合わせる。リーダーはまず自分を知り、次にメンバーの現状と理想を知ることで信頼関係が生まれる。</span></div>
+</div>
+<div class="map-row">
+<div class="map-cell sem"><small>CHAPTER 4-02</small><strong>悩みは「立場」から考える</strong><span>その人が背負う責任や負担から見立てる。</span></div>
+<div class="map-link">⇄</div>
+<div class="map-cell ls"><small>営業研修／お客様への提案</small><strong>お客様の立場と負担から、提案を組み立てる</strong><span>営業現場での提案・振り返りで鍛える対人力。「何を売るか」の前に「この人は何に困っているか」を立場から考える。</span></div>
+</div>
+<div class="map-row">
+<div class="map-cell sem"><small>CHAPTER 4-03</small><strong>先に与える。すぐに成果を求めない</strong><span>関係づくりには時間と負担がかかる。</span></div>
+<div class="map-link">⇄</div>
+<div class="map-cell ls"><small>目的と目標の違い</small><strong>目先の「目標」ではなく、その先の「目的」で動く</strong><span>目的は最終地点、目標はそこへの道しるべ。目の前の成果だけを追わず、目的に向かって関係も積み上げる。目的は途中で変えてもいい。</span></div>
+</div>
+<div class="map-row">
+<div class="map-cell sem"><small>CHAPTER 4-04</small><strong>仕草より、気持ちを理解する</strong><span>誕生日の例：「会いたい」気持ちを分かってもらえた実感。</span></div>
+<div class="map-link">⇄</div>
+<div class="map-cell ls"><small>リーダー研修</small><strong>相手に合わせたコミュニケーション／心理的安全性</strong><span>言葉遣いや距離感は相手によって受け取り方が変わる。心理的安全性と、厳しいことも言える関係を両立する「学習する組織」へ。</span></div>
+</div>
+<div class="map-row">
+<div class="map-cell sem"><small>CHAPTER 4-05</small><strong>解決できなくても、寄り添える</strong><span>すべてを解決することと、理解して支えることは違う。</span></div>
+<div class="map-link">⇄</div>
+<div class="map-cell ls"><small>1on1・人生相談の場</small><strong>答えを出すより、まず理解する</strong><span>メンバーの悩みをすべて解決できなくても、「分かろうとしている」姿勢そのものが支えになる。夢や目的を否定せず応援する文化。</span></div>
+</div>
+<div class="map-row">
+<div class="map-cell sem"><small>CHAPTER 2</small><strong>技術偏重で「人から得る力」が軽視される危険</strong><span>人を介してしか届かない情報がある。</span></div>
+<div class="map-link">⇄</div>
+<div class="map-cell ls"><small>オールインのインターン／AI活用研修</small><strong>AIを使いこなし、そのうえで対人力を磨く</strong><span>営業から始めて、対人力・ロジック・マーケティング・AIスキルをまとめて伸ばす。AIで効率化できる時代だからこそ、人とのつながりやコミュニティをつくる力の価値が上がる。</span></div>
+</div>
+</div>
+<div class="formula">
+<small>LIT SHIPの方程式で見ると</small>
+<div class="formula-eq"><b>人生</b><i>＝</i><b>考え</b><i>×</i><b class="hl">熱量</b><i>×</i><b>能力</b></div>
+<p>相手を深く知るための「能力」はもちろん大事。でも講演が最後に強調したのは、誠実に接する「考え」と、自分から働きかける勇気＝「熱量」でした。どれか一つがゼロなら、関係は動き出しません。</p>
+</div>
+</div>
+</section>
+
+<!-- LINE -->
+<section class="section" id="line">
+<div class="section-head"><span class="section-num" style="background:var(--sun);color:#5a4300">OUR LINE</span><h2>Lit Shipとしての線引き</h2><p>同じ「相手を知る」でも、目的が違えばまったく別物になる</p></div>
+<div class="dodont">
+<div class="dd do"><h3>○ 私たちがやること（相手のために知る）</h3><ul>
+<li>相手の目的・夢・大切にしている人に関心を持ち、会話の中で自然に知っていく</li>
+<li>知ったことは、相手を応援し、支え、気持ちに寄り添うために使う</li>
+<li>先に与える。時間・情報・ノウハウを惜しまず渡す</li>
+<li>聞いた情報は鵜呑みにせず、根拠を確かめてから判断する</li>
+<li>解決できない悩みでも「分かろうとしている」と伝える</li>
+</ul></div>
+<div class="dd dont"><h3>× 私たちがやらないこと（相手を動かすために使う）</h3><ul>
+<li>相手の弱み・悩み・秘密を、何かを引き出したり動かしたりするために使う</li>
+<li>本人の同意なく、SNSなどで相手を調べ上げる</li>
+<li>属性や断片的な情報から、相手の事情や動機を決めつける</li>
+<li>依存させる関係や、目的を隠した近づき方をする</li>
+<li>「法律上セーフだから」と、お客様や会社の情報を外に出す</li>
+</ul></div>
+</div>
+</section>
+
+<!-- ACTION -->
+<section class="section" id="action">
+<div class="section-head"><span class="section-num" style="background:var(--sun);color:#5a4300">NEXT ACTION</span><h2>明日からのアクション</h2><p>立場ごとに、今日から試せることを3つずつ</p></div>
+<div class="action-grid">
+<div class="card action"><div class="action-head"><div class="action-ico">🧑‍✈️</div><div><strong>リーダー・メンター</strong><span>メンバーとの関係づくり</span></div></div><ul class="check">
+<li>1on1の前に、メンバーの「目的」とバランスシートを見返してから話す</li>
+<li>メンバーにとって大切な日・大切な人を知り、その日は仕事より優先できるよう声をかける</li>
+<li>悩みを聞いたら、解決策より先に「分かった」を返す</li>
+</ul></div>
+<div class="card action"><div class="action-head"><div class="action-ico">🤝</div><div><strong>営業・現場メンバー</strong><span>お客様との関係づくり</span></div></div><ul class="check">
+<li>商談前に、お客様の地域・業界・立場を一つ調べてから会う</li>
+<li>初回から成果を求めず、まず相手に役立つ情報を一つ渡す</li>
+<li>ヒアリング内容は「事実」と「お客様の解釈」を分けて振り返りに書く</li>
+</ul></div>
+<div class="card action"><div class="action-head"><div class="action-ico">🎓</div><div><strong>学生インターン</strong><span>仲間・自分との関係づくり</span></div></div><ul class="check">
+<li>同じチームの仲間の「出身地」と「夢」を一つずつ聞いてみる</li>
+<li>AIの答えや聞いた話は、出典や根拠を一度確かめるクセをつける</li>
+<li>仲間の夢や目的を、否定せずに応援する一言を伝える</li>
+</ul></div>
+</div>
+</section>
+
+<!-- TAKEAWAY -->
+<section class="section" id="takeaway">
+<div class="section-head"><span class="section-num">TAKEAWAYS</span><h2>持ち帰る学び</h2><p>講演内容から整理した4つのポイント</p></div>
+<div class="take-grid">
+<div class="card take"><div class="take-n">1</div><div><strong>情報の価値と、情報源の信頼性は別。</strong><span>人を介した情報収集には技術だけでは補えない強みがあるが、虚偽や提供者の動機にも左右される。</span></div></div>
+<div class="card take"><div class="take-n">2</div><div><strong>人を理解するには、言葉だけでなく背景を見る。</strong><span>文化や立場、抱えている負担、大切にしている人への関心を持つ。</span></div></div>
+<div class="card take"><div class="take-n">3</div><div><strong>関係づくりには、先に与える姿勢と時間が伴う。</strong><span>すぐに答えや見返りを求めず、相手の気持ちを理解しようとする。</span></div></div>
+<div class="card take"><div class="take-n">4</div><div><strong>解決できない悩みにも、寄り添う意味がある。</strong><span>すべてを解決することと、相手を理解して支えることは同じではない。</span></div></div>
+</div>
+</section>
+
+<!-- CLOSING -->
+<section class="closing">
+<small>FROM LIT SHIP</small>
+<strong>人を深く知る力は、使い方しだいで「取り込む力」にも「照らす力」にもなる。<br>私たちは、相手を明るく照らすために使おう。</strong>
+<p>信頼や共感が情報活動で利用され得るという「警戒の視点」と、日常で誠実な関係を築くという「関係づくりの視点」。この2つを混同せずに持ち帰ることが、この講演を理解するうえでいちばん大切なポイントです。</p>
+</section>
+<div class="card source">
+<strong>出典・作成について</strong><br>
+・目黒区セミナー（人間関係・インテリジェンス）｜講師：野村先生（閉会挨拶での呼称に基づく。氏名全体は未確定）｜2026年11月6日｜対面・目黒区<br>
+・議事録：<a href="https://docs.google.com/document/d/1pqUAzu-7eA6SZhOPt0cFDc5hbPmRgHJhALJAJDSa1BE/edit" target="_blank" rel="noopener">【役員共有】目黒区セミナー議事録（Google ドキュメント）</a>（ボイスメモ「11月6日（18:05）」の文字起こしから再構成）<br>
+・「Lit Shipでいうと」「Lit Shipの学びとのつながり」「線引き」「明日からのアクション」は、講演内容をもとにLit Shipの研修・理念と結びつけて作成した社内向けの解釈であり、講師の発言ではありません。
+</div>
+
+</main></div>
